@@ -1,0 +1,29 @@
+{
+  "name": "Chat-application",
+  "version": "0.0.1",
+  "description": "sample chat application",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "body-parser": "^1.12.0",
+    "config": "^1.12.0",
+    "cookie-parser": "^1.3.4",
+    "express": "^4.12.0",
+    "mime": "~1.2.11",
+    "redis": "^0.12.1",
+    "socket.io": "^1.2.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.6.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.8.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-jslint": "^0.2.2",
+    "gulp-minify": "0.0.5",
+    "gulp-uglify": "^1.2.0"
+  }
+}

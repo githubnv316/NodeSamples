@@ -1,0 +1,3 @@
+var datastructureBuilder=require("./DatStructureBuilder");module.exports={reverseLinkedList:function(e){for(var r=e,t=null;null!==r;){var u=datastructureBuilder.createNewLinkedListNode(r.Previous,r.Next,r.Value);r=r.Next,null===t?t=u:t.Next=u}return console.log(t),t}};
+module.exports={buildLinkedList:function(e){for(var l=this.createNewLinkedListNode(null,null,null),n=l,t=0;t<e.length;t++){var i=n;i.Value=e[t];var u=this.createNewLinkedListNode(null,i,null);i.Next=u,n=u}return console.log(l),l},createNewLinkedListNode:function(e,l,n){return linkedListNode={Next:e,Previous:l,Value:n}}};
+var redis=require("redis"),redisClient=redis.createClient();

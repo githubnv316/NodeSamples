@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <title>Chat</title>
+</head>
+
+
+<div id="container">
+    <form id='send-form'>
+        <input id='send-message' />
+        <input id='send-button' type='button'  value='Send'/>
+    </form>
+</div>
+
+<script type="text/javascript" src="/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/js/socket.io.js"></script>
+
+<script>
+	 var socket = io.connect('http://localhost:1500', { 'sync disconnect on unload': true, transports: ['websocket', 'polling'] });
+
+	 socket.on('connect_error', function (error) {
+	 	console.log('Connection error.');
+	 });
+
+	 socket.on('connect', function (error) {
+	 	console.log('Connected.');
+	 	socket.disconnect(); // disconnect here by checking the number of times it failed.
+	 });
+
+	 socket.on('ConnectionSuccess', function(data) {
+	 	console.log(data);
+	 });
+	 socket.on('server-chat-message', function (data) {
+	 	console.log('from rabitmq server');
+	 	console.log(data);
+	 });
+	 
+	 $('#send-button').on('click', function () {
+
+	 	var chatMessage = $('#send-message').val();
+	 	socket.emit('ChatMessageEvent', {TestData: chatMessage});
+	 });
+
+  </script>
