@@ -1,5 +1,6 @@
 'use strict'
 
+// tests
 module.exports = function (grunt) {
 	
 	grunt.initConfig({
